@@ -1,33 +1,58 @@
-HELP.md
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+# ========== Java / Maven (backend) ==========
+backend/target/
+backend/.mvn/
+!backend/.mvn/wrapper/maven-wrapper.jar
 
-### STS ###
+# ========== IDE settings (both) ==========
+## IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+## VS Code
+.vscode/
+
+## Eclipse / STS
 .apt_generated
 .classpath
 .factorypath
 .project
-.settings
+.settings/
 .springBeans
 .sts4-cache
 
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+## NetBeans
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
 build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
-### VS Code ###
-.vscode/
+# ========== Others (both) ==========
+HELP.md
+*.log
+.DS_Store
+
+# ========== React / Node (frontend) ==========
+frontend/node_modules/
+frontend/.pnp/
+frontend/.pnp.js
+
+# build output
+frontend/build/
+
+# environment
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# test coverage
+frontend/coverage/
+
+# npm logs
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
