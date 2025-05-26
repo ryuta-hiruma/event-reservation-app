@@ -6,7 +6,8 @@ import com.example.event_reservation_app.repository.EventRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.time.OffsetDateTime;
+import java.time.ZoneId;
 import java.util.List;
 
 @Service
@@ -30,9 +31,12 @@ public class EventService {
 
         event.setTitle(form.getTitle());
 
+        System.out.println("受け取った日付文字列: " + form.getDate());
+
         // 日付の文字列を LocalDateTime に変換
-        LocalDateTime parsedDate = LocalDateTime.parse(form.getDate(), DateTimeFormatter.ISO_LOCAL_DATE_TIME);
-        event.setDate(parsedDate);
+        OffsetDateTime offsetDateTime = OffsetDateTime.parse(form.getDate());
+        LocalDateTime localDateTime = offsetDateTime.atZoneSameInstant(ZoneId.of("Asia/Tokyo")).toLocalDateTime();
+        event.setDate(localDateTime);
 
         return eventRepository.save(event);
     }
