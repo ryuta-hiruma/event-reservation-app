@@ -29,6 +29,7 @@ dist/
 nbdist/
 .nb-gradle/
 build/
+.env
 
 # ========== Others (both) ==========
 HELP.md
